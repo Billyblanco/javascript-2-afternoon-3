@@ -121,19 +121,21 @@ contains(names, 'Colt', function(result){
 
 //Code Here
 
-
-
-// Do not edit the code below.
 function uniq(names, callback){
   for (var i = 0; i < names.length; i++) {
     for (var k = i + 1; k < names.length; k++) {
-      if (names[i] === names[j]){
-        names.splice(j,1)
+      if (names[i] === names[k]){
+        names.splice(k,1)
       }
     }
   }
   callback(names)
 }
+
+// Do not edit the code below.
+uniq(names, function(uniqArr){
+  console.log('The new names array with all the duplicate items removed is ', uniqArr);
+});
 // Do not edit the code above.
 
 
@@ -146,7 +148,12 @@ function uniq(names, callback){
 */
 
 //Code Here 
-
+function each(names, callback) {
+  for (var i =0; i<names.length; i++) {
+    callback(names[i], i)
+    
+  }
+}
 
 
 // Do not edit the code below.
@@ -164,9 +171,9 @@ each(names, function(item, indice){
 
 // Code here
 function getUserById(users, id, callback){
-  for( var i = 0; i < user.length; i++){
-    if (users[i].id === id){
-      return callback(user[i])
+  for( var i = 0; i <users.length; i++){
+    if (users[i].id === users[i].id){
+      callback(users[i])
     }
   }
 
